@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "jester": "^0.2.3"
+  }
+}

@@ -42,7 +42,7 @@ Generate a webpage that displays a team's basic info so that managers can have q
 ---
 
 ## Features
-GIVEN a command-line application that accepts user input
+Given a command-line application that accepts user input
 [] Prompted for a team members and their information
 [] An HTML file is generated that displays a nicely formatted team roster based on user input
 [] Clicking on an email address in the HTML will open default email program and populates the TO field of the email with the address
