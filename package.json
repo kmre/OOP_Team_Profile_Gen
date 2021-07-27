@@ -1,6 +1,28 @@
 {
   "dependencies": {
     "inquirer": "^8.1.2",
+    "jest": "^27.0.6",
     "jester": "^0.2.3"
-  }
+  },
+  "name": "challenge_10",
+  "description": "## Description Generate a webpage that displays a team's basic info so that managers can have quick access to their emails and GitHub profiles.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmre/OOP_Team_Profile_Gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmre/OOP_Team_Profile_Gen/issues"
+  },
+  "homepage": "https://github.com/kmre/OOP_Team_Profile_Gen#readme"
 }
