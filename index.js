@@ -164,19 +164,6 @@ class Profile {
     }
 
     /////////////////////////////////////////////////
-    async startNewTeam() {
-        //console.log("\nLet's start a Team!\n")
-        return inquirer
-        .prompt({
-            type: 'list',
-            message: 'What would you like to do?',
-            name: 'choice',
-            choices: ['Add an Engineer to the Team', 'Add an Intern to the Team', 'Finish building the Team']
-        })
-        .then(({choice}) => {
-            return choice
-        })
-    }
 
     ///////////////////////////////////////
     //starts grabbing data fns for Manager
@@ -203,102 +190,66 @@ class Profile {
             console.log("\n------Manager Information------------\n")
             console.table(this.user.getInfo())
             //console.log(this.employees)
-
-            let choice = await this.startNewTeam();
-            
-            console.log(choice)
-
-            if (choice == 'Finish building the Team' && (this.employees.length == 0)) {
-                console.log("At least one member must be added!")
-                this.startNewTeam();
-            }
-            else if (choice == 'Add an Engineer to the Team') {
-                console.log('engineer')
-                let name = await this.getName();
-                        name = name.toLowerCase();
-                        const nameUp = this.upperCase(name);
-                let id = await this.getID();
-                let email = await this.getEmail();
-                let gitUser = await this.getGit();
-                this.entry = new Engineer(nameUp, id, email, gitUser)
-                this.employees.push(this.entry)
-                console.log("\n--------Eng Info-------------")
-                console.table(this.entry.getInfo2())                       
-                //console.log(this.entry)
-                console.log(this.employees)
-                this.startNewTeam();
-            }
-            else if (choice == 'Add an Intern to the Team') {
-                console.log('intern')
-                let name = await this.getName();
-                    name = name.toLowerCase();
-                    const nameUp3 = this.upperCase(name);
-                let id = await this.getID();
-                let email = await this.getEmail();
-                let school = await this.getSchool();
-                this.entry = new Engineer(nameUp3, id, email, school)
-                this.employees.push(this.entry)
-                console.log("\n--------Intern Info-------------")
-                console.table(this.entry.getInfo3())                       
-                //console.log(this.entry)
-                console.log(this.employees)
-                this.startNewTeam();
-            }
-            else if (choice == 'Finish building the Team' && (this.employees.length != 0)) {
-                console.log('Exit');
-            }
-
-            //console.log(choice)
-            //console.log(this.employees)
-            // switch(choice) {
-            //     case "Add an Engineer to the Team":
-            //         let name2 = await this.getName();
-            //             name2 = name2.toLowerCase();
-            //             const nameUp2 = this.upperCase(name2);
-            //         let id2 = await this.getID();
-            //         let email2 = await this.getEmail();
-            //         let gitUser = await this.getGit();
-            //         this.entry = new Engineer(nameUp2, id2, email2, gitUser)
-            //         this.employees.push(this.entry)
-            //         console.log("\n--------Eng Info-------------")
-            //         console.table(this.entry.getInfo2())                       
-            //         //console.log(this.entry)
-            //         console.log(this.employees)
-            //         choice = this.startNewTeam();
-                    
-
-            //     case "Add an Intern to the Team":
-            //             let name3 = await this.getName();
-            //                 name3 = name3.toLowerCase();
-            //                 const nameUp3 = this.upperCase(name3);
-            //             let id3 = await this.getID();
-            //             let email3 = await this.getEmail();
-            //             let school = await this.getSchool();
-            //             this.entry = new Engineer(nameUp3, id3, email3, school)
-            //             this.employees.push(this.entry)
-            //             console.log("\n--------Intern Info-------------")
-            //             console.table(this.entry.getInfo3())                       
-            //             //console.log(this.entry)
-            //             console.log(this.employees)
-            //             choice = this.startNewTeam();
-                        
-
-            //     case "Finish building the Team":
-            //          case this.employees.length != 0:
-            //              break;
-            //     default:
-            //         console.log("At least one member must be added!")
-            //         choice = this.startNewTeam();
-            // }
-
+            this.addTeam();
         }
-    //};
+    }
+    async addTeam() {
+        //console.log("\nLet's start a Team!\n")
+        return inquirer
+        .prompt({
+            type: 'list',
+            message: 'What would you like to do?',
+            name: 'choice',
+            choices: ['Add an Engineer to the Team', 'Add an Intern to the Team', 'Finish building the Team']
+        })
+        .then(({choice}) => {
+          this.checkChoice(choice)
+        })
+    }
 
-
-
+    async checkChoice(choice) {
+        console.log(choice)
+        if (choice == 'Finish building the Team' && (this.employees.length == 0)) {
+            console.log("At least one member must be added!")
+            this.addTeam();
+        }
+        else if (choice == 'Add an Engineer to the Team') {
+            console.log('engineer')
+            let name = await this.getName();
+                    name = name.toLowerCase();
+                    const nameUp = this.upperCase(name);
+            let id = await this.getID();
+            let email = await this.getEmail();
+            let gitUser = await this.getGit();
+            this.entry = new Engineer(nameUp, id, email, gitUser)
+            this.employees.push(this.entry)
+            console.log("\n--------Eng Info-------------")
+            console.table(this.entry.getInfo2())                       
+            //console.log(this.entry)
+            console.log(this.employees)
+            this.addTeam();
+        }
+        else if (choice == 'Add an Intern to the Team') {
+            console.log('intern')
+            let name = await this.getName();
+                name = name.toLowerCase();
+                const nameUp3 = this.upperCase(name);
+            let id = await this.getID();
+            let email = await this.getEmail();
+            let school = await this.getSchool();
+            this.entry = new Intern(nameUp3, id, email, school)
+            this.employees.push(this.entry)
+            console.log("\n--------Intern Info-------------")
+            console.table(this.entry.getInfo3())                       
+            //console.log(this.entry)
+            console.log(this.employees)
+            this.addTeam();
+        }
+        else if (choice == 'Finish building the Team' && (this.employees.length != 0)) {
+            console.log('Exit');
+        }
+    }
 }
-}
-
 
 new Profile().startProfileGen();
 
