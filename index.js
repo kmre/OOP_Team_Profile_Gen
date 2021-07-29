@@ -3,6 +3,7 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const genFrame = require('./src/page-template');
 
 class Profile {
     constructor() {
@@ -244,16 +245,17 @@ class Profile {
             this.addTeam();
         }
         else if (choice == 'Finish building the Team' && (this.employees.length != 0)) {
-            console.log('Exit');
+            console.log('Generating HTML');
             this.genHTML();
         }
     }
 
     genHTML() {
-
+        let manager = this.user.getInfo();
+        let arrayEmployees = this.employees;
         console.table(this.user.getInfo())
         console.table(this.employees)
-
+        return genFrame(manager, arrayEmployees);
     }
 }
 
