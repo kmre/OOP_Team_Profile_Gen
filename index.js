@@ -216,8 +216,8 @@ class Profile {
         else if (choice == 'Add an Engineer to the Team') {
             console.log('engineer')
             let name = await this.getName();
-                    name = name.toLowerCase();
-                    const nameUp = this.upperCase(name);
+                name = name.toLowerCase();
+                const nameUp = this.upperCase(name);
             let id = await this.getID();
             let email = await this.getEmail();
             let gitUser = await this.getGit();
