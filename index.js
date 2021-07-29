@@ -233,11 +233,11 @@ class Profile {
             console.log('intern')
             let name = await this.getName();
                 name = name.toLowerCase();
-                const nameUp3 = this.upperCase(name);
+                const nameUp = this.upperCase(name);
             let id = await this.getID();
             let email = await this.getEmail();
             let school = await this.getSchool();
-            this.entry = new Intern(nameUp3, id, email, school)
+            this.entry = new Intern(nameUp, id, email, school)
             this.employees.push(this.entry)
             console.log("\n--------Intern Info-------------")
             console.table(this.entry.getInfo3())                       
