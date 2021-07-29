@@ -82,10 +82,10 @@ class Profile {
         let email = await this.getEmail();
         let role = await this.getRole();
 
-        //console.log(name);
-        //console.log(id);
-        //console.log(email);
-       // console.log(role);
+        console.log(name);
+        console.log(id);
+        console.log(email);
+       console.log(role);
     };
     startNewTeam() {
 
