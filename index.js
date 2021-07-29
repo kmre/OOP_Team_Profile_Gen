@@ -163,8 +163,6 @@ class Profile {
         return output;
     }
 
-    /////////////////////////////////////////////////
-
     ///////////////////////////////////////
     //starts grabbing data fns for Manager
     async startProfileGen() {
@@ -247,7 +245,15 @@ class Profile {
         }
         else if (choice == 'Finish building the Team' && (this.employees.length != 0)) {
             console.log('Exit');
+            this.genHTML();
         }
+    }
+
+    genHTML() {
+
+        console.table(this.user.getInfo())
+        console.table(this.employees)
+
     }
 }
 
