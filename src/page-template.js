@@ -1,5 +1,4 @@
 //html for each role
-
 genManager = (manager) => {
   return `
     <div class="d-flex col-12 align-self-start">
@@ -16,7 +15,6 @@ genManager = (manager) => {
       </div>
     </div>`;
 };
-
 genEngineer = (engineer) => {
   return `
   <div class="d-flex col justify-content-evenly">
@@ -26,14 +24,13 @@ genEngineer = (engineer) => {
         <h5 class="card-subtitle m-1 p-2 bg-white">Engineer</h5>
         <ul class="list-group list-group-flush m-1 p-2 bg-white">
           <li class="list-group-item">ID: ${engineer.id}</li>
-          <li class="list-group-item"><a href = "mailto: ${engineer.email}">Email: $engineer.email}</a></li>
+          <li class="list-group-item"><a href = "mailto: ${engineer.email}">Email: ${engineer.email}</a></li>
           <li class="list-group-item p-2"><a href = "https://github.com/${engineer.git}" target = "_blank">Github: ${engineer.git}</a></li>
         </ul>
       </div>
     </div>
   </div>`;
 };
-
 genIntern = (intern) => {
   return `
   <div class="d-flex col justify-content-evenly">
@@ -43,23 +40,19 @@ genIntern = (intern) => {
         <h5 class="card-subtitle m-1 p-2 bg-white">Intern</h5>
         <ul class="list-group list-group-flush m-1 p-2 bg-white">
           <li class="list-group-item">ID: ${intern.id}</li>
-          <li class="list-group-item"><a href = "mailto: ${intern.email}">Email: $engineer.email}</a></li>
+          <li class="list-group-item"><a href = "mailto: ${intern.email}">Email: ${intern.email}</a></li>
           <li class="list-group-item p-2">School: ${intern.school}</li>
         </ul>
       </div>
     </div>
   </div>`;
 };
-
 //take objects in array 'team' => send to makeEmployee() functions above => push new objects (now html blocks) to teamArray 
 genFrame = (manager, arrayEmployees) => {
   console.log(manager, arrayEmployees)
-  
   const arrayTeamHtml = [];
-
   const managerHtml = genManager(manager);
   arrayTeamHtml.push(managerHtml)
-
   arrayEmployees.forEach(index => {
     switch (index.role) {
       case "Engineer":
@@ -68,7 +61,6 @@ genFrame = (manager, arrayEmployees) => {
         const engHtml = genEngineer(index)
         arrayTeamHtml.push(engHtml)
         break;
-    
       case "Intern":
         console.log("------------------index inside Intern")
         console.log(index.name)
@@ -83,7 +75,6 @@ genFrame = (manager, arrayEmployees) => {
   const pageHtml = genPage(joinTeamHtml);  //send team sections into final html function
   return pageHtml;
 };
-
 genPage = (teamHtml) => {
   //take teamArray and display in html mockup
   return `

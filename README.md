@@ -42,15 +42,15 @@ Generate a webpage that displays a team's basic info so that managers can have q
 ---
 
 ## Features
-[] Given a command-line application that accepts user input and prompts for a team member and their information
-[] An HTML file is generated that displays a nicely formatted team roster based on user input
-[] Clicking on an email address in the HTML will open default email program and populates the TO field of the email with the address
-[] Clicking on the GitHub username opens that GitHub profile in a new tab
-[] Starting the application will prompt to enter the team manager’s name, employee ID, email address, and office number
-[] Entering the team manager’s name, employee ID, email address, and office number will present a menu with the option to add an engineer or an intern or to finish building my team
-[] Selecting the engineer option prompts to enter the engineer’s name, ID, email, and GitHub username, and user is taken back to the menu
-[] Selecting the intern option prompts to enter the intern’s name, ID, email, and school, and user is taken back to the menu
-[] Finishing building the team will exit the application, and the HTML is generated
+[x] Given a command-line application that accepts user input and prompts for a team member and their information
+[x] An HTML file is generated that displays a nicely formatted team roster based on user input
+[x] Clicking on an email address in the HTML will open default email program and populates the TO field of the email with the address
+[x] Clicking on the GitHub username opens that GitHub profile in a new tab
+[x] Starting the application will prompt to enter the team manager’s name, employee ID, email address, and office number
+[x] Entering the team manager’s name, employee ID, email address, and office number will present a menu with the option to add an engineer or an intern or to finish building my team
+[x] Selecting the engineer option prompts to enter the engineer’s name, ID, email, and GitHub username, and user is taken back to the menu
+[x] Selecting the intern option prompts to enter the intern’s name, ID, email, and school, and user is taken back to the menu
+[x] Finishing building the team will exit the application, and the HTML is generated
 
 ---
 
@@ -59,6 +59,7 @@ Generate a webpage that displays a team's basic info so that managers can have q
 |Git Username|Git URL|
 |------------|-----------------------|
 |Name: Module 10| Url: GW website| 
+|Name: Ben Gallagher| Url: [Bgallag5](https://github.com/Bgallag5)| 
 
 
 

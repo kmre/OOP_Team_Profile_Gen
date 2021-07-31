@@ -94,7 +94,6 @@ class Profile {
         return enterRole;
         }); 
     }
-
     async getOffice() {
         return inquirer
          .prompt({
@@ -114,7 +113,6 @@ class Profile {
              return enterOffice;
          })
      }
-
     async getGit() {
         return inquirer
         .prompt({
@@ -153,7 +151,6 @@ class Profile {
             return enterSchool;
         })
     }    
-
 ///////////////////////////////////////////////////////
     //make the first letter upper case
     upperCase(input) {
@@ -259,8 +256,8 @@ class Profile {
         console.table(this.employees)
         const frame = genFrame(manager, arrayEmployees);
         this.printPage(frame);
-
     }
+    //create html
     printPage (frameHtml) {
         fs.writeFile("./dist/index.html", frameHtml, (err) => {
           if (err) {
@@ -270,8 +267,6 @@ class Profile {
           }
         });
       };
-
-
 }
 
 new Profile().startProfileGen();
