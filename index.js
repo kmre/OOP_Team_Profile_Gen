@@ -4,6 +4,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const genFrame = require('./src/page-template');
+const fs = require("fs");
 
 class Profile {
     constructor() {
@@ -192,6 +193,7 @@ class Profile {
             this.addTeam();
         }
     }
+    //choices for team members
     async addTeam() {
         //console.log("\nLet's start a Team!\n")
         return inquirer
@@ -205,7 +207,7 @@ class Profile {
           this.checkChoice(choice)
         })
     }
-
+    //get information for the choice made
     async checkChoice(choice) {
         console.log(choice)
         if (choice == 'Finish building the Team' && (this.employees.length == 0)) {
@@ -249,14 +251,27 @@ class Profile {
             this.genHTML();
         }
     }
-
+    //generate the wireframe for the HTML
     genHTML() {
         let manager = this.user.getInfo();
         let arrayEmployees = this.employees;
         console.table(this.user.getInfo())
         console.table(this.employees)
-        return genFrame(manager, arrayEmployees);
+        const frame = genFrame(manager, arrayEmployees);
+        this.printPage(frame);
+
     }
+    printPage (frameHtml) {
+        fs.writeFile("./dist/index.html", frameHtml, (err) => {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("HTML file generated!");
+          }
+        });
+      };
+
+
 }
 
 new Profile().startProfileGen();
