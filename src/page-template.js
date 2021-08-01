@@ -49,21 +49,21 @@ genIntern = (intern) => {
 };
 //take objects in array 'team' => send to makeEmployee() functions above => push new objects (now html blocks) to teamArray 
 genFrame = (manager, arrayEmployees) => {
-  console.log(manager, arrayEmployees)
+  //console.log(manager, arrayEmployees)
   const arrayTeamHtml = [];
   const managerHtml = genManager(manager);
   arrayTeamHtml.push(managerHtml)
   arrayEmployees.forEach(index => {
     switch (index.role) {
       case "Engineer":
-        console.log("------------------index inside Eng")
-        console.log(index.name)
+        //console.log("------------------index inside Eng")
+        //console.log(index.name)
         const engHtml = genEngineer(index)
         arrayTeamHtml.push(engHtml)
         break;
       case "Intern":
-        console.log("------------------index inside Intern")
-        console.log(index.name)
+        //console.log("------------------index inside Intern")
+        //console.log(index.name)
         const intHtml = genIntern(index)
         arrayTeamHtml.push(intHtml)
         break;

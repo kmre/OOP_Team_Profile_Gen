@@ -184,8 +184,8 @@ class Profile {
             console.log("\nWelcome " + `${nameUp}!\n`)            
             let office = await this.getOffice();
             this.user = new Manager(nameUp, id, email, roleUp, office);
-            console.log("\n------Manager Information------------\n")
-            console.table(this.user.getInfo())
+            //console.log("\n------Manager Information------------\n")
+            //console.table(this.user.getInfo())
             //console.log(this.employees)
             this.addTeam();
         }
@@ -221,10 +221,10 @@ class Profile {
             let gitUser = await this.getGit();
             this.entry = new Engineer(nameUp, id, email, gitUser)
             this.employees.push(this.entry)
-            console.log("\n--------Eng Info-------------")
-            console.table(this.entry.getInfo2())                       
+            //console.log("\n--------Eng Info-------------")
+            //console.table(this.entry.getInfo2())                       
             //console.log(this.entry)
-            console.log(this.employees)
+            //console.log(this.employees)
             this.addTeam();
         }
         else if (choice == 'Add an Intern to the Team') {
@@ -237,10 +237,10 @@ class Profile {
             let school = await this.getSchool();
             this.entry = new Intern(nameUp, id, email, school)
             this.employees.push(this.entry)
-            console.log("\n--------Intern Info-------------")
-            console.table(this.entry.getInfo3())                       
+            //console.log("\n--------Intern Info-------------")
+            //console.table(this.entry.getInfo3())                       
             //console.log(this.entry)
-            console.log(this.employees)
+            //console.log(this.employees)
             this.addTeam();
         }
         else if (choice == 'Finish building the Team' && (this.employees.length != 0)) {

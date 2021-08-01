@@ -35,9 +35,9 @@ Generate a webpage that displays a team's basic info so that managers can have q
 ---
 
 ## Tests
-[This link will take you to Test video #1](#) 
+[This link will take you to Test video #1](https://drive.google.com/file/d/1bwsnzQTmSD6HfSv7XiVzJm4A09WIByxy/view) 
 
-[This link will take you to Test video #2](#) 
+[This link will take you to Test video #2](https://drive.google.com/file/d/1u-Nt1RBuXZiaNm5_z7aFI7ck7mJjNBQv/view) 
 
 ---
 
